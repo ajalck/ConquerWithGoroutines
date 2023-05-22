@@ -35,7 +35,7 @@ func main() {
 	}()
 	go func() {
 		mut.RLock()
-		fmt.Println("R read :", score) // Here score may or may not have value .It would be based on the execution .Its why its says as RWmutex{} is often could not be used .
+		fmt.Println("R read :", score) // Here score may or may not have value .It would be based on the execution .Its why its says as RWmutex{} is often would not get used .
 		mut.RUnlock()
 		wg.Done()
 	}()
