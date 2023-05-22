@@ -3,7 +3,7 @@
 
 > ## Concurrency and Parallelism
 ===
->> *Concurrency* :- **Dealing** multiple tasks at a time
+>> *Concurrency* :- **Dealing** multiple tasks at a time    
 >> *Parallelism* :- **Doing** multiple tasks at a time
 
 > ## Goroutines
@@ -41,6 +41,6 @@ in this snippet , main goroutine will be terminated without executing anything.
 >>> ![Alt text](./images/goConcurrency.readme.png)
 * So to avoid this we can use `sync.Mutex{}`
 * Mutex is **locking** the memory space for a goroutine during its execution if its trying to write into that memory.And **unclocks** the memory after writing. 
->> In other words Mutex does only allows one thread to use a memory space at a time.
+>> In other words Mutex allows only one thread to use one memory space at a time.
 * `sync.RWmutex{}` --> Its not a widely using method . Eventhough , its concept is ,
 >> Its allowing multiple threads to perform read operation on a memory but locking the read operation when a thread come to write on a memory.
