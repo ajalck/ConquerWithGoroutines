@@ -8,36 +8,36 @@ import (
 func main() {
 
 	wg := &sync.WaitGroup{}
-	//mut := sync.RWMutex{} //<== mut :=sync.Mutex{}
+	mut := sync.RWMutex{} //<== mut :=sync.Mutex{}
 
 	var score []int
 	wg.Add(4)
 	go func() {
 		fmt.Println("R one")
-		// mut.Lock()
+		mut.Lock()
 		score = append(score, 1)
-		// mut.Unlock()
+		mut.Unlock()
 		wg.Done()
 	}()
 	go func() {
 		fmt.Println("R two")
-		// mut.Lock()
+		mut.Lock()
 		score = append(score, 2)
-		//mut.Unlock()
+		mut.Unlock()
 		wg.Done()
 	}()
 	go func() {
 		fmt.Println("R three")
-		//mut.Lock()
+		mut.Lock()
 		score = append(score, 3)
-		//mut.Unlock()
+		mut.Unlock()
 		wg.Done()
 	}()
 	go func() {
-		//mut.RLock()
+		mut.RLock()
 		goRoutineCredentials := []string{"channels", "waitGroups", "mutex"}
 		fmt.Println("R read :", goRoutineCredentials)
-		//mut.RUnlock()
+		mut.RUnlock()
 		wg.Done()
 	}()
 	wg.Wait()
