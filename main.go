@@ -35,8 +35,7 @@ func main() {
 	}()
 	go func() {
 		mut.RLock()
-		goRoutineCredentials := []string{"channels", "waitGroups", "mutex"}
-		fmt.Println("R read :", goRoutineCredentials)
+		fmt.Println("R read :", score) // Here socre may or may not have value .It would be based on the execution .Its why its says as RWmutex{} is often could not be used .
 		mut.RUnlock()
 		wg.Done()
 	}()

@@ -43,4 +43,4 @@ in this snippet , main goroutine will be terminated without executing anything.
 * Mutex is **locking** the memory space for a goroutine during its execution if its trying to write into that memory.And **unclocks** the memory after writing. 
 >> In other words Mutex allows only one thread to use one memory space at a time.
 * `sync.RWmutex{}` --> Its not a widely using method . Eventhough , its concept is ,
->> Its allowing multiple threads to perform read operation on a memory but locking the read operation when a thread come to write on a memory.
+>> Its allowing multiple threads to perform read operation on a memory but locking the read operation when a thread come to write on that memory._But there is a misunderstanding that RWmutex{} will block a memory to read for a goroutine if multiple goroutines comes at a time.As well as it only blocks the *same memory* which locked for writing from the reading.
